@@ -64,8 +64,13 @@ public class MovimentiController {
     @GetMapping(value = "/{id}")
     public List<Movimenti> getMovimentiByConto(@PathVariable(value  = "id") String idconto){
         Optional<Conto> conto = contoService.findById(Long.parseLong(idconto));
+        List<Movimenti> movimentiList = movimentiService.getAllMovimentiByConto(conto);
         //Modoficare con return solo degli ultimi 5 movimenti
-        return movimentiService.getAllMovimentiByConto(conto);
+        if(movimentiList.size() <= 5) {
+            return movimentiList;
+        }else {
+            return movimentiList.subList(movimentiList.size()-5, movimentiList.size());
+        }
     }
 
 }
