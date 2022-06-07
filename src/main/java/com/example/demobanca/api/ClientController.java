@@ -20,13 +20,13 @@ public class ClientController {
     }
 
     @PostMapping(value = "/add")
-    public void addClient(@RequestBody ClientDTO client){
+    public Client addClient(@RequestBody ClientDTO client){
         Client clientToSave = new Client();
         clientToSave.setName(client.getName());
         clientToSave.setSurname(client.getSurname());
         clientToSave.setEmail(client.getEmail());
         clientToSave.setTel(client.getTel());
-        clientService.addClient(clientToSave);
+        return clientService.addClient(clientToSave);
     }
 
     @GetMapping(value = "/all")

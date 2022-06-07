@@ -8,8 +8,10 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+
 @Service
 public class ClientService {
+
 
     private final ClientRepositoryAccessDb clientRepository;
 
@@ -18,8 +20,8 @@ public class ClientService {
         this.clientRepository = clientRepository;
     }
 
-    public void addClient(Client client){
-        clientRepository.save(client);
+    public Client addClient(Client client){
+        return clientRepository.save(client);
     }
 
     public List<Client> getAllClient(){
