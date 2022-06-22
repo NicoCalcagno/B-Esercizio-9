@@ -1,10 +1,10 @@
-package com.example.demobanca.model;
+package com.example.demobanca.dto;
 
 
 
 public class ClientDTO {
 
-    private Long idclient;
+    private Long clientId;
 
 
     private String name;
@@ -18,6 +18,7 @@ public class ClientDTO {
 
     private String tel;
 
+    private String imageUrl;
 
     public ClientDTO() {
         //do nothing
@@ -53,11 +54,19 @@ public class ClientDTO {
 
     public void setName(String name) { this.name = name; }
 
-    public Long getIdclient() {
-        return idclient;
+    public Long getClientId() {
+        return clientId;
     }
 
-    public void setIdclient(Long idclient) {
-        this.idclient = idclient;
+    public void setClientId(Long clientId) {
+        this.clientId = clientId;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }

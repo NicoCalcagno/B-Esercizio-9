@@ -1,4 +1,4 @@
-package com.example.demobanca.model;
+package com.example.demobanca.entity;
 
 import javax.persistence.*;
 
@@ -8,8 +8,8 @@ public class Client {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id_client")
-    private Long idclient;
+    @Column(name = "client_id")
+    private Long clientId;
 
     @Column(name = "name")
     private String name;
@@ -23,9 +23,12 @@ public class Client {
     @Column(name = "tel")
     private String tel;
 
+    @Column(name = "imageUrl")
+    private String imageUrl;
 
     public Client() {
         //do nothing
+
     }
 
     public String getTel() {
@@ -58,11 +61,19 @@ public class Client {
 
     public void setName(String name) { this.name = name; }
 
-    public Long getIdclient() {
-        return idclient;
+    public Long getClientId() {
+        return clientId;
     }
 
-    public void setIdclient(Long idclient) {
-        this.idclient = idclient;
+    public void setClientId(java.lang.Long clientId) {
+        this.clientId = clientId;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }
